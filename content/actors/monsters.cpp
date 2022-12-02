@@ -25,3 +25,15 @@ MonsterType goblin() {
     return {"goblin", default_speed, health, std::make_shared<None>(),
         default_behavior}; 
 } 
+
+MonsterType skeleton() {
+    int health = 2;
+    return {"skeleton", default_speed, health, std::make_shared<None>(),
+        default_behavior};
+}
+
+MonsterType zombie() {
+    int health = 2;
+    return {"zombie", default_speed, health, std::make_shared<None>(),
+        default_behavior};
+}
