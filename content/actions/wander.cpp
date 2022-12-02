@@ -5,8 +5,8 @@
 #include "randomness.h"
 
 Result Wander::perform(Engine& engine) { 
-    Vec pos = actor->get_position(); 
-    std::vector<Vec> neighbors = engine.dungeon.neighbors(pos); 
+    Vec position = actor->get_position(); 
+    std::vector<Vec> neighbors = engine.dungeon.neighbors(position); 
     // randomize directions 
     shuffle(std::begin(neighbors), std::end(neighbors));  
     for (const Vec& neighbor : neighbors) { 
