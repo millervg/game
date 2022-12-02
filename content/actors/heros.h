@@ -4,7 +4,7 @@
 #include "none.h"
 #include "move.h"
 #include "closedoor.h"
-#include "rest.h"
+#include "knife.h"
 
 namespace Heros {
     
@@ -24,13 +24,9 @@ namespace Heros {
         {"C", []() {
             return std::make_unique<CloseDoor>();
         }},
-        {"R", []() {
-            return std::make_unique<Rest>();
-        }}
     };
 
     constexpr int default_speed{8};
-    const HeroType nobody{"none", default_speed, 1, std::make_shared<None>(), {}};
-    const HeroType knight{"knight", default_speed, 1, std::make_shared<None>(), key_bindings};
+    const HeroType knight{"knight", default_speed, 1, std::make_shared<Knife>(2), key_bindings};
     
 }
