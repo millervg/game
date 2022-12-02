@@ -1,13 +1,8 @@
-#include <iostream>
-
 #include "wander.h"
-#include "actor.h"
-#include "tile.h"
 #include "engine.h"
 #include "move.h"
-
-Wander::Wander(Vec position)
-    :position(position) {}
+#include "rest.h"
+#include "randomness.h"
 
 Result Wander::perform(Engine& engine) { 
     Vec pos = actor->get_position(); 
@@ -21,4 +16,5 @@ Result Wander::perform(Engine& engine) {
             return alternative(Move{direction}); 
         } 
     }
+    return alternative(Rest()); 
 }
