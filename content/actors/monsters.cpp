@@ -4,6 +4,10 @@
 #include "randomness.h"
 #include "engine.h"
 #include "none.h"
+#include "weapon.h"
+#include "knife.h"
+#include "hammer.h"
+#include "sword.h"
 namespace Monsters {
     std::unique_ptr<Action> default_behavior(Engine& engine, Monster& me) { 
         // pursue Hero if monster can see him (If Hero sees me, I see him) 
@@ -27,19 +31,19 @@ namespace Monsters {
 
     MonsterType goblin() { 
         int health = 2; 
-        return {"goblin", default_speed, health, std::make_shared<None>(),
+        return {"goblin", default_speed, health, std::make_shared<Knife>(2),
             default_behavior}; 
     } 
 
     MonsterType skeleton() {
         int health = 2;
-        return {"skeleton", default_speed, health, std::make_shared<None>(),
+        return {"skeleton", default_speed, health, std::make_shared<Hammer>(2),
             default_behavior};
     }
 
     MonsterType zombie() {
         int health = 2;
-        return {"zombie", default_speed, health, std::make_shared<None>(),
+        return {"zombie", default_speed, health, std::make_shared<Sword>(2),
             default_behavior};
     }
 }
