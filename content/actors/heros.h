@@ -5,6 +5,7 @@
 #include "move.h"
 #include "closedoor.h"
 #include "knife.h"
+#include "opendoor.h"
 
 namespace Heros {
     
@@ -23,7 +24,7 @@ namespace Heros {
         }},
         {"C", []() {
             return std::make_unique<CloseDoor>();
-        }},
+        }}
     };
 
     constexpr int default_speed{8};
