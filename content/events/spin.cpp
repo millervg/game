@@ -14,10 +14,12 @@ Spin::Spin(Sprite& sprite, Vec direction, Actor& defender, int damage)
     // set delta (which rotation direction)
     if (direction == Vec{1, 0}) {
         starting_angle = 0;
+        sprite.shift.y = 2;
         delta = 360.0 / (duration - 1);
     }
     else if (direction == Vec{-1, 0}) {
         starting_angle = 0;
+        sprite.shift.x = 2;
         delta = 360.0 / (duration - 1);
     }
     else if (direction == Vec{0, 1}) {
@@ -27,7 +29,7 @@ Spin::Spin(Sprite& sprite, Vec direction, Actor& defender, int damage)
         delta = 360.0 / (duration - 1) * sign;
     }
     else { // {0, -1}
-        sprite.shift.x = 0;
+        sprite.shift.x = 2;
         double sign = std::copysign(1.0, starting_angle);
         starting_angle = 135 * sign;
         delta = 360.0 / (duration - 1) * sign;
