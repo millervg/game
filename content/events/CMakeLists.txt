@@ -3,7 +3,6 @@ add_library(events
   hit.cpp
   die.cpp
   swing.cpp
-  animation.cpp
   spin.cpp
   )
 
