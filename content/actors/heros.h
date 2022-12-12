@@ -28,6 +28,6 @@ namespace Heros {
     };
 
     constexpr int default_speed{8};
-    const HeroType knight{"knight", default_speed, 1, std::make_shared<Knife>(2), key_bindings};
+    const HeroType knight{"knight", default_speed, 10, std::make_shared<Knife>(2), key_bindings};
     
 }
